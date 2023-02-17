@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    
+</head>
+<body>
+    <h2 style="text-align: center;color: orange;">Book a Call</h2>
+    <h5 style="text-align: center;">book a call under 1 hr and representative will call you</h5>
+    <hr>
+    
+    <form novalidate class="was-validated" action="#" onsubmit="signup()">
+        
+        <label  for="name" class="form-label">Name</label>
+        <br/>
+        <input type="text" id="name" value="sunny" ><br/>
+        <label for="email" class="form-label">Email</label><br/>
+        <input type="email" id="email" ><br/>
+        <label for="password" class="form-label">Password</label><br/>
+        <input type="password" id="password" ><br/>
+        time for call:
+        <br/>
+        <input type="date">
+        <input type="time"><br/>
+        <input type="submit" value="Get a Call">
+    
+    </form>
+
+    <script>
+        const form=document.querySelector("form");
+
+        form.addEventListener('submit', e=>{
+            if(!form.checkValidity()){
+                e.preventDefault()
+            }
+            form.classList.add('was-validated')
+        })
+        function signup(){
+           const name= document.getElementById("name").value;
+           const mail= document.getElementById("email").value;
+           console.log(mail)
+           localStorage.setItem(name,mail);
+        }
+
+    </script>
+</body>
+</html>
